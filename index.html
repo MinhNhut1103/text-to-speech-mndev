@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hỗ trợ làm video</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="gap30"></div>
+        <h3 class="text-center">
+            <p>Chuyển văn bản thành giọng nói FPT TTS | Code by Nhựt Đz</p>
+        </h3>
+        <p>Nhập vào key của bạn! Vào app tự lấy key nhé rồi nhập vào đây!
+        </p>
+
+        <form method="get">
+            <div style="display: flex">
+                <div style="margin-right: 30px;">
+                    <p style="margin: 0;">Nhập vào key</p>
+                    <input class="nhapvaokey" type="text" id="keycuaban" placeholder="Nhập vào key của bạn" />
+                </div>
+                <div style="margin-right: 30px;">
+                    <p style="margin: 0;">Chọn giọng đọc</p>
+                    <select id="giongdoc">
+                        <option value="banmai" selected="selected">Ban Mai (Nữ Miền Bắc)</option>
+                        <option value="thuminh">Thu Minh (Nữ Miền Bắc)</option>
+                        <option value="myan">Mỹ An (Nữ Miền Trung)</option>
+                        <option value="giahuy">Gia Huy (Nam Miền Trung)</option>
+                        <option value="ngoclam">Ngọc Lam (Nữ Miền Trung)</option>
+                        <option value="leminh">Lê Minh (Nam Miền Bắc)</option>
+                        <option value="minhquang">Minh Quang (Nam Miền Nam)</option>
+                        <option value="linhsan">Linh San (Nữ Miền Nam)</option>
+                        <option value="lannhi">Lan Nhi (Nữ Miền Nam)</option>
+                    </select>
+                </div>
+                <div>
+                    <p style="margin: 0;">Chọn tốc độ</p>
+                    <select id="tocdo">
+                        <option value="-2">Minimum</option>
+                        <option value="-1">Chậm hơn</option>
+                        <option value="-0.5">Chậm</option>
+                        <option value="0" selected="selected">Bình Thường (mặc định) </option>
+                        <option value="1">Nhanh </option>
+                        <option value="1.5">Nhanh hơn</option>
+                        <option value="2">Maximum</option>
+                    </select>
+                </div>
+            </div>
+            <div class="gap10"></div>
+            <input class="btn btn-light" type="button" value="Hướng dẫn lấy key" onclick="mohuongdan()" />
+            <div id="huongdan" style="display: none;">
+                <p>1: Đầu tiên truy cập <a href="https://fpt.ai/vi/tts" target="_blank">vào đây</a> và đăng nhập</p>
+                <p>2: Vào mục Console</p>
+                <p>3: Click vào API Keys</p>
+                <p>4: Create API KEY</p>
+                <p>5: Copy vào rồi sử dụng thôi!</p>
+            </div>
+        </form>
+
+        <div class="gap10"></div>
+
+        <form method="get">
+            <textarea class="nhapvao" type="text" id="tukhoa" class="tukhoa"
+                placeholder="Nhập văn bản của bạn"></textarea>
+            <div class="gap10"></div>
+            <input class="btn btn-primary" type="button" value="Đếm số từ" onclick="demtu()" />
+            <input class="btn btn-info" type="button" value="Ngắt thành văn bản mới" onclick="ngatvanban()" />
+            <input class="btn btn-danger" type="button" onclick="reloadtrang()" value="Reload Trang" />
+        </form>
+        <br />
+    </div>
+
+    <div class="container">
+        <p>Số lượng từ: <span id="soluongtu"></span></p>
+        <hr />
+        <p>Tạo văn bản mới ngắt dòng:</p>
+        <div id="vanbanmoi" style="display: none;"></div>
+        <div class="gap10"></div>
+        <input class="btn btn-success" type="button" value="Convert Text To Speech" onclick="convertTTS()" />
+        <div class="gap10"></div>
+        <audio src="" id="downloadbutton" style="display: none;" controls="controls">Tải âm thanh tại đây</audio>
+    </div>
+</body>
+
+<script src="tts.js"></script>
+<script src="index.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</html>
