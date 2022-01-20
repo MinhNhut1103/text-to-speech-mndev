@@ -24,8 +24,8 @@
         <form method="get">
             <div style="display: flex">
                 <div style="margin-right: 30px;">
-                    <p style="margin: 0;">Nhập vào key</p>
-                    <input class="nhapvaokey" type="text" id="keycuaban" placeholder="Nhập vào key của bạn" />
+                    <p style="margin: 0;">Nhập vào key của bạn..</p>
+                    <input class="nhapvaokey" type="text" id="keycuaban" placeholder="abcxyz.." />
                 </div>
                 <div style="margin-right: 30px;">
                     <p style="margin: 0;">Chọn giọng đọc</p>
@@ -57,11 +57,12 @@
             <div class="gap10"></div>
             <input class="btn btn-light" type="button" value="Hướng dẫn lấy key" onclick="mohuongdan()" />
             <div id="huongdan" style="display: none;">
-                <p>1: Đầu tiên truy cập <a href="https://fpt.ai/vi/tts" target="_blank">vào đây</a> và đăng nhập</p>
-                <p>2: Vào mục Console</p>
-                <p>3: Click vào API Keys</p>
-                <p>4: Create API KEY</p>
-                <p>5: Copy vào rồi sử dụng thôi!</p>
+                <p>1: Đầu tiên truy cập <a href="https://fpt.ai/vi/tts" target="_blank">TẠI ĐÂY</a></p>
+                <p>2: Đăng nhập vào, nếu chưa có tài khoản thì đăng ký nhé</p>
+                <p>3: Vào mục Console</p>
+                <p>4: Click vào API Keys</p>
+                <p>5: Create API KEY</p>
+                <p>6: Copy vào rồi sử dụng thôi!</p>
             </div>
         </form>
 
@@ -71,7 +72,7 @@
             <textarea class="nhapvao" type="text" id="tukhoa" class="tukhoa"
                 placeholder="Nhập văn bản của bạn"></textarea>
             <div class="gap10"></div>
-            <input class="btn btn-primary" type="button" value="Đếm số từ" onclick="demtu()" />
+            <input class="btn btn-primary" type="button" value="Đếm số ký tự" onclick="demtu()" />
             <input class="btn btn-info" type="button" value="Ngắt thành văn bản mới" onclick="ngatvanban()" />
             <input class="btn btn-danger" type="button" onclick="reloadtrang()" value="Reload Trang" />
         </form>
@@ -79,19 +80,21 @@
     </div>
 
     <div class="container">
-        <p>Số lượng từ: <span id="soluongtu"></span></p>
-        <hr />
-        <p>Tạo văn bản mới ngắt dòng:</p>
-        <div id="vanbanmoi" style="display: none;"></div>
+        <p>Số ký tự: <span id="soluongtu"></span></p>
         <div class="gap10"></div>
         <input class="btn btn-success" type="button" value="Convert Text To Speech" onclick="convertTTS()" />
         <div class="gap10"></div>
         <audio src="" id="downloadbutton" style="display: none;" controls="controls">Tải âm thanh tại đây</audio>
+        <hr />
+        <p>Tạo văn bản mới ngắt dòng:</p>
+        <div class="gap10"></div>
+        <div id="vanbanmoi" style="display: none;"></div>
+        <div class="gap30"></div>
     </div>
 </body>
 
-<script src="tts.js"></script>
-<script src="index.js"></script>
+
+<script src="fpt-tts.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
